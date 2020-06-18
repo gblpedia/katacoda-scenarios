@@ -3,7 +3,7 @@
   "title": "Ubuntu Scenario",
   "description": "Your First Scenario",
   "difficulty": "beginner",
-  "time": "2 minutes",
+  "time": "100 minutes",
   "details": {
     "steps": [{
       "title": "Step 1 - Run Command",
