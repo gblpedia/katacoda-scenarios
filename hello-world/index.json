@@ -1,5 +1,6 @@
 {
-  "title": "Hello World Scenario",
+  "private": true,
+  "title": "Ubuntu 1804 Scenario",
   "description": "Your First Scenario",
   "difficulty": "beginner",
   "time": "2 minutes",
@@ -18,9 +19,9 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
+    "uimessage1": "\u001b[32mYour Interactive Ubuntu Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
   },
   "backend": {
-    "imageid": "bash"
+    "imageid": "ubuntu:1804"
   }
 }
