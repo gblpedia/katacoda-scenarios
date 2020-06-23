@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "title": "Ubuntu Scenario",
   "description": "Your First Scenario",
   "difficulty": "beginner",
