@@ -1,6 +1,6 @@
 {
   "private": false,
-  "title": "K8S Multi-Nodes Scenario",
+  "title": "K8S v1.17 Multi-Nodes Scenario",
   "description": "Your First Scenario",
   "difficulty": "beginner",
   "time": "200 minutes",
@@ -22,6 +22,6 @@
     "uimessage1": "\u001b[32mYour Interactive K8S Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18"
+    "imageid": "kubernetes-cluster-running:1.17"
   }
 }
