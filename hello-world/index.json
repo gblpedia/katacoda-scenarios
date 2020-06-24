@@ -1,9 +1,9 @@
 {
   "private": false,
-  "title": "Ubuntu Scenario",
+  "title": "K8S Multi-Nodes Scenario",
   "description": "Your First Scenario",
   "difficulty": "beginner",
-  "time": "100 minutes",
+  "time": "200 minutes",
   "details": {
     "steps": [{
       "title": "Step 1 - Run Command",
@@ -19,9 +19,9 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "uimessage1": "\u001b[32mYour Interactive Ubuntu Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
+    "uimessage1": "\u001b[32mYour Interactive K8S Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
   },
   "backend": {
-    "imageid": "ubuntu:1804"
+    "imageid": "kubernetes-cluster-running:1.18"
   }
 }
