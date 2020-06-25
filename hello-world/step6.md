@@ -63,7 +63,7 @@
         dynamic:
           storageClass: ${STORAGE_CLASS}
   EOF
-  ```
+  ```{{execute}}
 
 3. Helm Install
 
@@ -75,4 +75,4 @@
   --values primehub-values.yaml \
   --timeout 3000\
   primehub infuseai/primehub
-  ```
+  ```{{execute}}
