@@ -5,7 +5,9 @@
 
 ### Prepare Domain and values file
 
-HOST2 Domain: [[HOST_SUBDOMAIN]]-[[KATACODA_HOST2]].environments.katacoda.com
+Render HOST2 Domain: [[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+
+port 8500: https://[[HOST_SUBDOMAIN]]-8500-[[KATACODA_HOST]].environments.katacoda.com/
 
 1. Generate values file.
 
