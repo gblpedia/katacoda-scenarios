@@ -5,14 +5,12 @@
 
 ### Prepare Domain and values file
 
-Render HOST2 Domain: [[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
-
-port 8500: https://[[HOST_SUBDOMAIN]]-8500-[[KATACODA_HOST]].environments.katacoda.com/
+Copy HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{copy}}
 
 1. Generate values file.
 
   ```
-  KEYCLOAK_DOMAIN=[[HOST_SUBDOMAIN]]-[[KATACODA_HOST2]].environments.katacoda.com
+  KEYCLOAK_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
   KEYCLOAK_PASSWORD=password
   KEYCLOAK_DB_PASSWORD=password
   STORAGE_CLASS=local-path
