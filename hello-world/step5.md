@@ -5,7 +5,7 @@
 
 ### Prepare Domain and values file
 
-Copy HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{copy}}
+HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{copy}}
 
 1. Generate values file.
 
@@ -50,7 +50,7 @@ Copy HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.kataco
     --values keycloak-values.yaml \
     --version 7.2.1 \
     keycloak codecentric/keycloak
-  ```
+  ```{{execute}}
 
 3. Rollout Keycloak 
 `kubectl -n default rollout status sts/keycloak`{{execute}}

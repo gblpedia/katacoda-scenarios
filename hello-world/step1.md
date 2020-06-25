@@ -39,4 +39,4 @@ This is an _example_ of creating a scenario and running a **command**
 
 2. Helm init
 
-`helm init --service-account tiller --wait`{{execute}}
+    `helm init --service-account tiller --wait`{{execute}}

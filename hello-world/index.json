@@ -1,6 +1,6 @@
 {
   "private": false,
-  "title": "PrimeHub CE on K8S 1.18 v0.0.6",
+  "title": "PrimeHub CE on K8S 1.18 v0.0.7",
   "description": "PrimeHub CE Installation Scenario",
   "difficulty": "beginner",
   "time": "200 minutes",
@@ -25,6 +25,10 @@
       {
         "title": "Step 5 - Install Keycloak",
         "text": "step5.md"
+      },
+      {
+        "title": "Step 6 - Install PrimeHub CE",
+        "text": "step6.md"
       }
     ],
     "intro": {
