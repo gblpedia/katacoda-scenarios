@@ -6,13 +6,11 @@ This is an _example_ of creating a scenario and running a **command**
 
 1. Find CPU architecture `dpkg --print-architecture`{{execute}}
 2. Download the adm64 version`curl -O https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
-3. `tar -zxvf helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
-4. `mv linux-amd64/helm /usr/local/bin/helm`{{execute}}
-5. `helm version`{{execute}}
+3. Extact `tar -zxvf helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
+4. Move `mv linux-amd64/helm /usr/local/bin/helm`{{execute}}
+5. Verify `helm version`{{execute}}
 
 ## Initialize Helm and Tiller
-
-1. `helm init --service-account tiller --wait`{{execute}}
 
 ```
 kubectl apply -f - << EOF
@@ -36,3 +34,5 @@ subjects:
     namespace: kube-system
 EOF
 ```{{execute}}
+
+`helm init --service-account tiller --wait`{{execute}}
