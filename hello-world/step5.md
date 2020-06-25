@@ -50,8 +50,6 @@ Copy HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.kataco
     --values keycloak-values.yaml \
     --version 7.2.1 \
     keycloak codecentric/keycloak
-
-  kubectl -n default rollout status sts/keycloak
   ```
 
 3. Rollout Keycloak 
