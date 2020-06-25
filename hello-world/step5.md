@@ -54,3 +54,8 @@ HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.co
 
 3. Rollout Keycloak 
 `kubectl -n default rollout status sts/keycloak`{{execute}}
+
+
+After the pod is ready, check the url below:
+
+Keycloak cosnole: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth

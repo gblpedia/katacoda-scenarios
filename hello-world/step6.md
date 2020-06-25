@@ -73,6 +73,6 @@
   --reset-values \
   --namespace hub  \
   --values primehub-values.yaml \
-  --timeout 3000\
+  --timeout 3000 \
   primehub infuseai/primehub
   ```{{execute}}
