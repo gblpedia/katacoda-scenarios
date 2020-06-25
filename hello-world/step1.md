@@ -1,6 +1,6 @@
 Install Helm v2.16.1
 
-## Task
+## Install Helm
 
 This is an _example_ of creating a scenario and running a **command**
 
@@ -8,8 +8,11 @@ This is an _example_ of creating a scenario and running a **command**
 2. Download the adm64 version`curl -O https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
 3. `tar -zxvf helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
 4. `mv linux-amd64/helm /usr/local/bin/helm`{{execute}}
-5. `helm init --service-account tiller --wait`{{execute}}
-6. 
+
+## Initialize Helm and Tiller
+
+1.. `helm init --service-account tiller --wait`{{execute}}
+2.. 
     ```bash
     kubectl apply -f - << EOF
     apiVersion: v1
@@ -31,4 +34,4 @@ This is an _example_ of creating a scenario and running a **command**
         name: tiller
         namespace: kube-system
     EOF
-    ```{{copy}}
+    ```{{execute}}
