@@ -17,26 +17,26 @@ This is an _example_ of creating a scenario and running a **command**
 
 `helm init`{{execute}}
 
-1. Tiller role binding
+2. Tiller role binding
 
 ```
 kubectl apply -f - << EOF
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-name: tiller
-namespace: kube-system
+  name: tiller
+  namespace: kube-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-name: tiller
+  name: tiller
 roleRef:
-apiGroup: rbac.authorization.k8s.io
-kind: ClusterRole
-name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
 subjects:
-- kind: ServiceAccount
+  - kind: ServiceAccount
     name: tiller
     namespace: kube-system
 EOF
