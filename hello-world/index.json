@@ -1,6 +1,6 @@
 {
   "private": false,
-  "title": "PrimeHub CE on K8S 1.18",
+  "title": "PrimeHub CE on K8S 1.18 v0.0.1",
   "description": "PrimeHub CE Installation Scenario",
   "difficulty": "beginner",
   "time": "200 minutes",

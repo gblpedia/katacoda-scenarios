@@ -8,6 +8,7 @@ This is an _example_ of creating a scenario and running a **command**
 2. Download the adm64 version`curl -O https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
 3. `tar -zxvf helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
 4. `mv linux-amd64/helm /usr/local/bin/helm`{{execute}}
+5. `helm version`{{execute}}
 
 ## Initialize Helm and Tiller
 
