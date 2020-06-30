@@ -42,3 +42,9 @@ subjects:
     namespace: kube-system
 EOF
 ```{{execute}}
+
+3. Check if Tiller is ready
+
+```
+kubectl get pods -A | grep Tiller
+```{{execute}}

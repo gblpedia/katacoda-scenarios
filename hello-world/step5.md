@@ -40,7 +40,9 @@ HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.co
   EOF
   ```{{execute}}
 
-2. Helm install
+2. Verify `cat keycloak-values.yaml`{{execute}}
+
+3. Helm install
 
   ```
   helm upgrade \
@@ -52,10 +54,10 @@ HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.co
     keycloak codecentric/keycloak
   ```{{execute}}
 
-3. Rollout Keycloak 
+4. Rollout Keycloak 
 `kubectl -n default rollout status sts/keycloak`{{execute}}
 
 
 After the pod is ready, check the url below:
 
-Keycloak cosnole: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth
+Keycloak console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth

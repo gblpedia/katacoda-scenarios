@@ -1,14 +1,11 @@
 ## Steps
 
-1. Add Helm repo `helm repo add codecentric https://codecentric.github.io/helm-charts`{{execute}}
-2. Update repo `helm repo update`{{execute}}
-
 ### Prepare Domain and values file
 
 1. Add Helm Repo
 
 `helm repo add infuseai https://charts.infuseai.io`{{execute}}
-`helm repo update`{{execute}} 
+`helm repo update`{{execute}}
 
 
 2. Generate values file.
@@ -65,7 +62,9 @@
   EOF
   ```{{execute}}
 
-3. Helm Install
+3. Verify `primehub-values.yaml`{{execute}}
+
+4. Helm Install
 
   ```
   helm upgrade \
