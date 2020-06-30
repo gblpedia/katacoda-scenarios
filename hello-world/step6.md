@@ -1,73 +1,84 @@
 ## Steps
 
-### Prepare Domain and values file
-
-1. Add Helm Repo
+### Add Helm Repo
 
 `helm repo add infuseai https://charts.infuseai.io`{{execute}}
+
 `helm repo update`{{execute}}
 
+### Generate values file
 
-2. Generate values file.
+Since Katacoda supports `https`, we use `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead.
 
-  HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{copy}}
+Run the command below
 
-  ```
-  PRIMEHUB_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
-  PRIMEHUB_PASSWORD=password
-  KEYCLOAK_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
-  KEYCLOAK_PASSWORD=password
-  STORAGE_CLASS=local-path
-  GRAPHQL_SECRET_KEY=$(openssl rand -hex 32)
-  HUB_AUTH_STATE_CRYPTO_KEY=$(openssl rand -hex 32)
-  HUB_PROXY_SECRET_TOKEN=$(openssl rand -hex 32)
-
-  cat <<EOF > primehub-values.yaml
-  primehub:
+```
+PRIMEHUB_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+PRIMEHUB_PASSWORD=password
+KEYCLOAK_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+KEYCLOAK_PASSWORD=password
+STORAGE_CLASS=local-path
+GRAPHQL_SECRET_KEY=$(openssl rand -hex 32)
+HUB_AUTH_STATE_CRYPTO_KEY=$(openssl rand -hex 32)
+HUB_PROXY_SECRET_TOKEN=$(openssl rand -hex 32)
+cat <<EOF > primehub-values.yaml
+primehub:
+  scheme: https
+  domain: ${PRIMEHUB_DOMAIN}
+  keycloak:
     scheme: https
-    domain: ${PRIMEHUB_DOMAIN}
-    keycloak:
-      scheme: https
-      domain: ${KEYCLOAK_DOMAIN}
-      username: keycloak
-      password: ${KEYCLOAK_PASSWORD}
-  bootstrap:
-    usernmae: phadmin  
-    password: ${PRIMEHUB_PASSWORD}
-  graphql:
-    sharedGraphqlSecret: ${GRAPHQL_SECRET_KEY}
-  groupvolume:
-    storageClass: ${STORAGE_CLASS}
-  ingress:
-    hosts:
-    -  ${PRIMEHUB_DOMAIN}
-  jupyterhub:
-    auth:
-      state:
-        cryptoKey: ${GRAPHQL_SECRET_KEY}
-    hub:
-      db:
-        pvc:
-          storageClassName: ${STORAGE_CLASS}
-    proxy:
-      secretToken: ${HUB_PROXY_SECRET_TOKEN}
-    singleuser:
-      storage:
-        dynamic:
-          storageClass: ${STORAGE_CLASS}
-  EOF
-  ```{{execute}}
+    domain: ${KEYCLOAK_DOMAIN}
+    username: keycloak
+    password: ${KEYCLOAK_PASSWORD}
+bootstrap:
+  usernmae: phadmin  
+  password: ${PRIMEHUB_PASSWORD}
+graphql:
+  sharedGraphqlSecret: ${GRAPHQL_SECRET_KEY}
+groupvolume:
+  storageClass: ${STORAGE_CLASS}
+ingress:
+  hosts:
+  -  ${PRIMEHUB_DOMAIN}
+jupyterhub:
+  auth:
+    state:
+      cryptoKey: ${GRAPHQL_SECRET_KEY}
+  hub:
+    db:
+      pvc:
+        storageClassName: ${STORAGE_CLASS}
+  proxy:
+    secretToken: ${HUB_PROXY_SECRET_TOKEN}
+  singleuser:
+    storage:
+      dynamic:
+        storageClass: ${STORAGE_CLASS}
+EOF
+```{{execute}}
 
-3. Verify `primehub-values.yaml`{{execute}}
+### Verify
 
-4. Helm Install
+`cat primehub-values.yaml`{{execute}}
 
-  ```
-  helm upgrade \
-  --install \
-  --reset-values \
-  --namespace hub  \
-  --values primehub-values.yaml \
-  --timeout 3000 \
-  primehub infuseai/primehub
-  ```{{execute}}
+### Helm Install
+
+```
+helm upgrade \
+--install \
+--reset-values \
+--namespace hub  \
+--values primehub-values.yaml \
+--timeout 3000 \
+primehub infuseai/primehub
+```{{execute}}
+
+### Label Nodes
+
+`kubectl label node component=singleuser-server --all`{{execute}}
+
+### Check PrimeHub Console
+
+PrimeHub Console: [[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+
+Once you see the login dialogue of PrimeHub Console, please go to next step.

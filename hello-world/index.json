@@ -1,34 +1,38 @@
 {
   "private": false,
-  "title": "PrimeHub CE on K8S 1.18 v0.0.13",
+  "title": "PrimeHub CE on K8S 1.18 v0.0.14",
   "description": "PrimeHub CE Installation Scenario",
   "difficulty": "beginner",
   "time": "200 minutes",
   "details": {
     "steps": [
       {
-        "title": "Step 1 - Install Helm v2.x",
+        "title": "Install Helm v2.x",
         "text": "step1.md"
       },
       {
-        "title": "Step 2 - Set up StorageClass",
+        "title": "Set up StorageClass",
         "text": "step2.md"
       },
       {
-        "title": "Step 3 - Install Ingress-Nginx",
+        "title": "Install Ingress-Nginx",
         "text": "step3.md"
       },
       {
-        "title": "Step 4 - Install Metracontroller",
+        "title": "Install Metacontroller",
         "text": "step4.md"
       },
       {
-        "title": "Step 5 - Install Keycloak",
+        "title": "Install Keycloak",
         "text": "step5.md"
       },
       {
-        "title": "Step 6 - Install PrimeHub CE",
+        "title": "Install PrimeHub CE",
         "text": "step6.md"
+      },
+      {
+        "title": "Launch JupyterHub",
+        "text": "step7.md"
       }
     ],
     "intro": {

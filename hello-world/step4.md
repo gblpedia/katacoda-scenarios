@@ -1,8 +1,27 @@
-## Install Metacontroller
+For the detail of Metacontroller, please go to the [official site](https://metacontroller.app/guide/install/).
 
-### Steps
+## Steps
 
-1. Create namespace`kubectl create namespace metacontroller`{{execute}}
-2. Apply `kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/metacontroller/master/manifests/metacontroller-rbac.yaml`{{execute}}
-3. Apply `kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/metacontroller/master/manifests/metacontroller.yaml`{{execute}}
-4. Verify `kubectl get crd | grep metacontroller`{{execute}}
+### Create namespace
+
+`kubectl create namespace metacontroller`{{execute}}
+
+### Create service account and role-binding
+
+`kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/metacontroller/master/manifests/metacontroller-rbac.yaml`{{execute}}
+
+### Create CRDs and StatefulSet
+
+`kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/metacontroller/master/manifests/metacontroller.yaml`{{execute}}
+
+### Verify
+
+`kubectl get crd | grep metacontroller`{{execute}}
+
+You should see something similar.
+
+```
+compositecontrollers.metacontroller.k8s.io     2020-01-06T01:24:57Z
+controllerrevisions.metacontroller.k8s.io      2020-01-06T01:24:57Z
+decoratorcontrollers.metacontroller.k8s.io     2020-01-06T01:24:57Z
+```
