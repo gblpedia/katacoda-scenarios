@@ -1,33 +1,30 @@
-
-### Steps
-
-#### Check CPU architecture
+**Check CPU architecture**
 
 `dpkg --print-architecture`{{execute}}
 
-#### Download the amd64 version
+D**ownload the amd64 version**
 
 `curl -O https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
 
-#### Extract tar
+**Extract tar file**
 
 `tar -zxvf helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
 
-#### Move
+**Mov**e
 
 `mv linux-amd64/helm /usr/local/bin/helm`{{execute}}
 
-## Initialize Helm and Tiller
+### Initialize Helm and Tiller
 
-#### Helm init
+**Helm init**
 
 `helm init`{{execute}}
 
-#### Verify
+**Verify**
 
 `helm version`{{execute}}
 
-#### Tiller role binding
+**Tiller role binding**
 
 ```
 kubectl apply -f - << EOF
@@ -53,7 +50,7 @@ EOF
 ```{{execute}}
 
 
-#### Check if Tiller is ready
+**Check if Tiller is ready**
 
 It may take a while until Tiller is ready.
 
