@@ -1,10 +1,10 @@
-## Steps
+### Steps
 
-### Helm Install
+#### Helm Install
 
 `helm install stable/nginx-ingress --namespace ingress-nginx --name nginx-ingress --set controller.hostNetwork=true --set rbac.create=true`{{execute}}
 
-### Verify
+#### Verify
 
 `kubectl get svc -n ingress-nginx`{{execute}}
 

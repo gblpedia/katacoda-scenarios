@@ -1,18 +1,18 @@
-## Steps
+### Steps
 
-### Add Helm repo
+#### Add Helm repo
 
 `helm repo add codecentric https://codecentric.github.io/helm-charts`{{execute}}
 
-### Update repo
+#### Update repo
 
 `helm repo update`{{execute}}
 
-### Prepare Domain and values file
+#### Prepare Domain and values file
 
 Current HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`
 
-### Generate values file.
+#### Generate values file.
 
 ```
 KEYCLOAK_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
@@ -46,11 +46,11 @@ EOF
 ```{{execute}}
 
 
-### Verify
+#### Verify
 
 `cat keycloak-values.yaml`{{execute}}
 
-### Helm install
+#### Helm install
 
 ```
 helm upgrade \
@@ -62,7 +62,7 @@ helm upgrade \
   keycloak codecentric/keycloak
 ```{{execute}}
 
-### Rollout Keycloak
+#### Rollout Keycloak
 
 `kubectl -n default rollout status sts/keycloak`{{execute}}
 

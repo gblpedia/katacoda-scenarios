@@ -1,12 +1,12 @@
-## Steps
+### Steps
 
-### Add Helm Repo
+#### Add Helm Repo
 
 `helm repo add infuseai https://charts.infuseai.io`{{execute}}
 
 `helm repo update`{{execute}}
 
-### Generate values file
+#### Generate values file
 
 Since Katacoda supports `https`, we use `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead.
 
@@ -57,11 +57,11 @@ jupyterhub:
 EOF
 ```{{execute}}
 
-### Verify
+#### Verify
 
 `cat primehub-values.yaml`{{execute}}
 
-### Helm Install
+#### Helm Install
 
 ```
 helm upgrade \
@@ -73,11 +73,11 @@ helm upgrade \
 primehub infuseai/primehub
 ```{{execute}}
 
-### Label Nodes
+#### Label Nodes
 
 `kubectl label node component=singleuser-server --all`{{execute}}
 
-### Check PrimeHub Console
+#### Check PrimeHub Console
 
 PrimeHub Console: [[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 

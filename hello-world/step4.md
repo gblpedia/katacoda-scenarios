@@ -1,20 +1,20 @@
 For the detail of Metacontroller, please go to the [official site](https://metacontroller.app/guide/install/).
 
-## Steps
+### Steps
 
-### Create namespace
+#### Create namespace
 
 `kubectl create namespace metacontroller`{{execute}}
 
-### Create service account and role-binding
+#### Create service account and role-binding
 
 `kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/metacontroller/master/manifests/metacontroller-rbac.yaml`{{execute}}
 
-### Create CRDs and StatefulSet
+#### Create CRDs and StatefulSet
 
 `kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/metacontroller/master/manifests/metacontroller.yaml`{{execute}}
 
-### Verify
+#### Verify
 
 `kubectl get crd | grep metacontroller`{{execute}}
 

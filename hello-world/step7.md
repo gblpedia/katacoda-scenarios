@@ -1,10 +1,10 @@
-## Steps
+### Steps
 
-### Login
+#### Login
 
 Login PrimeHub Console as `phadmin`/`password`.
 
-### Create Instance Type
+#### Create Instance Type
 
 1. Click `Admin Dashboard`, then select `Instance Type`.
 
@@ -16,7 +16,7 @@ Login PrimeHub Console as `phadmin`/`password`.
 
 5. Click `Confirm`.
 
-### Launch JupyterHub
+#### Launch JupyterHub
 
 Go back to **User Portal by clicking PrimeHub logo at top-left corner.
 
