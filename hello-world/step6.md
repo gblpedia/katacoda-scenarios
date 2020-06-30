@@ -24,10 +24,10 @@
 
   cat <<EOF > primehub-values.yaml
   primehub:
-    scheme: http
+    scheme: https
     domain: ${PRIMEHUB_DOMAIN}
     keycloak:
-      scheme: http
+      scheme: https
       domain: ${KEYCLOAK_DOMAIN}
       username: keycloak
       password: ${KEYCLOAK_PASSWORD}
@@ -39,10 +39,6 @@
   groupvolume:
     storageClass: ${STORAGE_CLASS}
   ingress:
-    annotations:
-      # If `primehub.scheme` is `http`, the following annotations are required
-      kubernetes.io/ingress.allow-http: "true"
-      nginx.ingress.kubernetes.io/ssl-redirect: "false"
     hosts:
     -  ${PRIMEHUB_DOMAIN}
   jupyterhub:
