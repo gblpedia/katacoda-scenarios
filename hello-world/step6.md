@@ -73,12 +73,22 @@ helm upgrade \
 primehub infuseai/primehub
 ```{{execute}}
 
+**Watch the installation**
+
+Open a new terminal, Terminal 2, and run the command to watch pods.
+`watch 'kubectl -n hub get pods'`{{copy}}
+
+Please ignores status, `CreateContainerConfigError` until you see `Completed` or `Running`.
+
+
 #### Label Nodes
 
 `kubectl label node component=singleuser-server --all`{{execute}}
 
+###
+
 #### Check PrimeHub Console
 
-PrimeHub Console: [[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
 Once you see the login dialogue of PrimeHub Console, please go to next step.

@@ -1,10 +1,9 @@
-### Steps
 
-#### Login
+**Login**
 
 Login PrimeHub Console as `phadmin`/`password`.
 
-#### Create Instance Type
+**Create Instance Type**
 
 1. Click `Admin Dashboard`, then select `Instance Type`.
 
@@ -16,13 +15,13 @@ Login PrimeHub Console as `phadmin`/`password`.
 
 5. Click `Confirm`.
 
-#### Launch JupyterHub
+**Launch JupyterHub**
 
 Go back to **User Portal by clicking PrimeHub logo at top-left corner.
 
 1. Click `JupyterHub`.
 
-2. Select the instance type, **tiny** and select the image as default.
+2. Select the instance type, **tiny** and select the default image, base-notebook.
 
 3. Click `Start Notebook`
 

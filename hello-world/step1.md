@@ -10,7 +10,7 @@ D**ownload the amd64 version**
 
 `tar -zxvf helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
 
-**Mov**e
+**Move**
 
 `mv linux-amd64/helm /usr/local/bin/helm`{{execute}}
 

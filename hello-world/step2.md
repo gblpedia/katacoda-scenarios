@@ -1,16 +1,14 @@
 
 In this experimental scenario, we use `local-path`; in a real circumstance, you may consider other [provisioners](https://kubernetes.io/docs/concepts/storage/storage-classes/).
 
-### Steps
-
-#### Apply
+**Apply**
 
 `kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml`{{execute}}
 
-#### Patch
+**Patch**
 
 `kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`{{execute}}
 
-#### Verify
+**Verify**
 
 `kubectl get sc`{{execute}}
