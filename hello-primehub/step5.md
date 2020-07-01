@@ -66,7 +66,7 @@ helm upgrade \
 
 **Wait and Watch**
 
-In Terminal 2, `watch 'kubectl get pods'`{{execute}}
+In Terminal 2, `watch 'kubectl get pods'`{{execute interrupt T2}}
 
 
 It will take a while until Keycloak pods are running and in Ready. When Keycloak is running, check Keycloak console https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth

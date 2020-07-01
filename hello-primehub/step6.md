@@ -76,7 +76,7 @@ primehub infuseai/primehub
 
 **Wait and Watch**
 
-In Terminal 2, `watch 'kubectl -n hub get pods'`{{execute}}
+In Terminal 2, `watch 'kubectl -n hub get pods'`{{execute interrupt T2}}
 
 Please wait and ignore the status, `CreateContainerConfigError` until you see all of pods showing `Completed` or `Running` in Ready.
 
