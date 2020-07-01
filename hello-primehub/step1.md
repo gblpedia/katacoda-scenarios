@@ -1,3 +1,13 @@
+**Initiate Kubernetest environment
+
+`launch.sh`{{execute}}
+
+** Check if two nodes are ready
+
+It may take a short while, keep checking until two nodes are in Ready.
+
+`kubectl get nodes`{{execute}}
+
 **Check CPU architecture**
 
 `dpkg --print-architecture`{{execute}}
