@@ -104,4 +104,6 @@ In the first Terminal.
 
 PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
-You will see the login dialogue of PrimeHub Console, please go to final step.
+You will see the login dialogue of PrimeHub Console. 
+
+Hooray! PrimeHub CE has been installed and running now. Final step, let's launch a JupyterHub on PrimeHub.

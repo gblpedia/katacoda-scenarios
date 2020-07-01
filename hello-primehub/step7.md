@@ -1,15 +1,15 @@
 
 **Login**
 
-PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+Login PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com as `phadmin`{{copy}}/`password`{{copy}}.
 
-Login PrimeHub Console as `phadmin`{{copy}}/`password`{{copy}}.
+You will see the User Portal.
 
 **Create Instance Type**
 
 Due to the shortage of the allocatable cpu resource in Katacoda environment, we are required to create a specific instance type for this scenario. In a real circumstance, *it is not required and not recommended*.
 
-While creating an instance type, we will add a **toleration** which can tolerate the tainted controlplane/master node so that JupyterHub pod is allowed to be scheduled on the controlplane/master node.
+While creating an instance type, we will add a **toleration** which can tolerate the tainted controlplane(master) node so that JupyterHub pod is allowed to be scheduled on the controlplane/master node.
 
 1. Click `Admin Dashboard` in Admin section, then click `Instance Types`.
 
@@ -19,7 +19,7 @@ While creating an instance type, we will add a **toleration** which can tolerate
 
 4. Enable `Global`.
 
-5. Click tab `Tolerations` beside `Basic Info`.
+5. Click the tab `Tolerations` beside the tab `Basic Info`.
 
 6. Click `+ Add` for a toleration addition.
 
@@ -41,8 +41,8 @@ Go back to **User Portal** by clicking **PrimeHub logo** at top-left corner.
 
 3. Click `Start Notebook`
 
-It will take a while for spawning. After it, you will see a **JupyterHub**.
+It will take a while for spawning. After it, you will see a JupyterHub.
 
-That's all. Congratulations you have installed a PrimeHub CE. 
+That's all. Feel free to try PrimeHub CE. Please don't be too harsh on this Katacoda environment.
 
-Please don't be too harsh on this Katacoda environment and give PrimeHub CE a try in your circumstance. Enjoy!
+Hope you like it. Why not giving PrimeHub CE a try in your circumstance. Enjoy!

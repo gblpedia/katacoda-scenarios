@@ -1,18 +1,8 @@
-**Initiate Kubernetest environment**
-
-`launch.sh`{{execute}}
-
-**Check if two nodes are ready**
-
-It may take a short while, keep checking until two nodes are in Ready.
-
-`kubectl get nodes`{{execute}}
-
 **Check CPU architecture**
 
 `dpkg --print-architecture`{{execute}}
 
-D**ownload the amd64 version**
+**Download the amd64 version**
 
 `curl -O https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
 
@@ -25,6 +15,12 @@ D**ownload the amd64 version**
 `mv linux-amd64/helm /usr/local/bin/helm`{{execute}}
 
 ### Initialize Helm and Tiller
+
+**Check if two nodes are ready**
+
+Check if controlplane(master) and node01 are in Ready.
+
+`kubectl get nodes`{{execute}}
 
 **Helm init**
 
@@ -62,8 +58,8 @@ It may take a while until Tiller is ready.
 
 `kubectl get pods -A | grep tiller`{{execute}}
 
-Once Tiller is ready, please go to next step.
-
 **Verify**
 
 `helm version`{{execute}}
+
+Once Tiller is ready, please go to next step.

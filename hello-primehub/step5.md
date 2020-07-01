@@ -72,3 +72,5 @@ helm upgrade \
 It will take a while until Keycloak pods are ready. When Keycloak is running, check Keycloak console https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth
 
 You will see the web console. It's not necessary in the scenario, however, you are able to login **Administration Console** with `keycloak`{{copy}}/`password`{{copy}}.
+
+So far, we have set up the prerequisites for PrimeHub CE. Next step, PrimeHub CE installation.
