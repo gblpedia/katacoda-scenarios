@@ -1,9 +1,9 @@
 {
   "private": false,
-  "title": "PrimeHub CE on K8S 1.18 v0.0.17",
+  "title": "PrimeHub CE Installation v0.0.18",
   "description": "PrimeHub CE Installation Scenario",
   "difficulty": "beginner",
-  "time": "200 minutes",
+  "time": "25 minutes",
   "details": {
     "steps": [
       {
@@ -44,8 +44,9 @@
     }
   },
   "environment": {
+    "terminals": [{"name": "Terminal 2", "target": "host01"}],
     "uilayout": "terminal",
-    "uimessage1": "\u001b[32mYour Interactive K8S Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
+    "uimessage1": "\u001b[32mYour Interactive K8S Terminal.\r\nPlease wait until Kubernetes is ready`\u001b[m\r\n"
   },
   "backend": {
     "imageid": "kubernetes-cluster-running:1.18"

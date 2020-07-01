@@ -1,12 +1,11 @@
-### Steps
 
-#### Add Helm Repo
+A**dd Helm Repo**
 
 `helm repo add infuseai https://charts.infuseai.io`{{execute}}
 
 `helm repo update`{{execute}}
 
-#### Generate values file
+**Generate values file**
 
 Since Katacoda supports `https`, we use `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead.
 
@@ -78,10 +77,23 @@ primehub infuseai/primehub
 Open a new terminal, Terminal 2, and run the command to watch pods.
 `watch 'kubectl -n hub get pods'`{{copy}}
 
-Please ignores status, `CreateContainerConfigError` until you see `Completed` or `Running`.
+Please ignores the status, `CreateContainerConfigError` until you see all of pods showing `Completed` or `Running`.
+
+Go back to first Terminal and wait until you see messages:
+
+```
+NOTES:
+PrimeHub is installed at:
+
+To get the login account, please enter the following commands:
+  echo "username: phadmin"
+  echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
+```
 
 
-#### Label Nodes
+**Label Nodes**
+
+In the first Terminal.
 
 `kubectl label node component=singleuser-server --all`{{execute}}
 
