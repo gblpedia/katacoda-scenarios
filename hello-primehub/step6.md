@@ -1,5 +1,5 @@
 
-A**dd Helm Repo**
+**Add Helm Repo**
 
 `helm repo add infuseai https://charts.infuseai.io`{{execute}}
 
@@ -7,9 +7,9 @@ A**dd Helm Repo**
 
 **Generate values file**
 
-Since Katacoda supports `https`, we use `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead.
+Since Katacoda supports `https`, we use `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead; it is varied with a circumstance.
 
-Run the command below
+Generate `primehub-values.yaml`
 
 ```
 PRIMEHUB_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
@@ -56,11 +56,13 @@ jupyterhub:
 EOF
 ```{{execute}}
 
-#### Verify
+**Verify**
 
 `cat primehub-values.yaml`{{execute}}
 
-#### Helm Install
+**Helm Install**
+
+It will install the latest PrimeHub CE.
 
 ```
 helm upgrade \
@@ -74,12 +76,12 @@ primehub infuseai/primehub
 
 **Watch the installation**
 
-Open a new terminal, Terminal 2, and run the command to watch pods.
-`watch 'kubectl -n hub get pods'`{{copy}}
+Open **Terminal 2**, and execute the command to watch pods.
+`watch 'kubectl -n hub get pods'`{{execute}}
 
-Please ignores the status, `CreateContainerConfigError` until you see all of pods showing `Completed` or `Running`.
+Please wait and ignore the status, `CreateContainerConfigError` until you see all of pods showing `Completed` or `Running`.
 
-Go back to first Terminal and wait until you see messages:
+Then go back to first Terminal and wait until you see messages:
 
 ```
 NOTES:
@@ -97,10 +99,9 @@ In the first Terminal.
 
 `kubectl label node component=singleuser-server --all`{{execute}}
 
-###
 
-#### Check PrimeHub Console
+**Check PrimeHub Console**
 
 PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
-Once you see the login dialogue of PrimeHub Console, please go to next step.
+You will see the login dialogue of PrimeHub Console, please go to final step.

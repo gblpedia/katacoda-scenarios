@@ -1,6 +1,6 @@
 {
   "private": false,
-  "title": "PrimeHub CE Installation v0.0.19",
+  "title": "PrimeHub CE Installation v0.0.20",
   "description": "PrimeHub CE Installation Scenario",
   "difficulty": "beginner",
   "time": "25 minutes",
@@ -15,7 +15,7 @@
         "text": "step2.md"
       },
       {
-        "title": "Install Ingress-Nginx",
+        "title": "Install Nginx-ingress",
         "text": "step3.md"
       },
       {
@@ -37,6 +37,7 @@
     ],
     "intro": {
       "text": "intro.md",
+      "code": "foreground.sh",
       "credits": ""
     },
     "finish": {

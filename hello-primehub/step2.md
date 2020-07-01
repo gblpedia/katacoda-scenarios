@@ -1,5 +1,5 @@
 
-In this experimental scenario, we use `local-path`; in a real circumstance, you may consider other [provisioners](https://kubernetes.io/docs/concepts/storage/storage-classes/).
+In this experimental scenario, we use storageclass, `local-path`; in a real circumstance, you may consider other [provisioners](https://kubernetes.io/docs/concepts/storage/storage-classes/).
 
 **Apply**
 

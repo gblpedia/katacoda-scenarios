@@ -69,6 +69,6 @@ helm upgrade \
 `kubectl get pods -A | grep keycloak`{{execute}}
 
 
-It will take a while. When Keycloak is running, check Keycloak console https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth
+It will take a while until Keycloak pods are ready. When Keycloak is running, check Keycloak console https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth
 
-You should see the web console and be able to login **Administration Console** with `keycloak`/`password`.
+You will see the web console. It's not necessary in the scenario, however, you are able to login **Administration Console** with `keycloak`{{copy}}/`password`{{copy}}.

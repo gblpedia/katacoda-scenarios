@@ -6,6 +6,9 @@
 
 `kubectl get svc -n ingress-nginx`{{execute}}
 
-When Ingress-Nginx is ready, it should show `default backend - 404`. Keep refreshing the page until you see it.
 
-Check https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com.
+Check https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+
+When Nginx-ingress is ready, the page should show `default backend - 404`. 
+
+Keep refreshing the page several times until you see it, don't be scared by the error messages.

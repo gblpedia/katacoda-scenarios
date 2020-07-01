@@ -1,8 +1,8 @@
-**Initiate Kubernetest environment
+**Initiate Kubernetest environment**
 
 `launch.sh`{{execute}}
 
-** Check if two nodes are ready
+**Check if two nodes are ready**
 
 It may take a short while, keep checking until two nodes are in Ready.
 
@@ -29,10 +29,6 @@ D**ownload the amd64 version**
 **Helm init**
 
 `helm init`{{execute}}
-
-**Verify**
-
-`helm version`{{execute}}
 
 **Tiller role binding**
 
@@ -67,3 +63,7 @@ It may take a while until Tiller is ready.
 `kubectl get pods -A | grep tiller`{{execute}}
 
 Once Tiller is ready, please go to next step.
+
+**Verify**
+
+`helm version`{{execute}}

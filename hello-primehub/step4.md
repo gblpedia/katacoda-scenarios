@@ -1,5 +1,3 @@
-For the detail of Metacontroller, please go to the [official site](https://metacontroller.app/guide/install/).
-
 **Create namespace**
 
 `kubectl create namespace metacontroller`{{execute}}

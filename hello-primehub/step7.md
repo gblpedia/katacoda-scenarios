@@ -7,17 +7,19 @@ Login PrimeHub Console as `phadmin`{{copy}}/`password`{{copy}}.
 
 **Create Instance Type**
 
-While creating an instance type, we will add a toleration which can tolerate the tainted controlplane/master node so that JupyterHub pod is allowed to be scheduled on the controlplane/master node due to the shortage of the allocatable cpu resource in Katacoda environment. In a real circumstance, *it is not recommended*.
+Due to the shortage of the allocatable cpu resource in Katacoda environment, we are required to create a specific instance type for this scenario. In a real circumstance, *it is not required and not recommended*.
 
-1. Click `Admin Dashboard`, then select `Instance Type`.
+While creating an instance type, we will add a **toleration** which can tolerate the tainted controlplane/master node so that JupyterHub pod is allowed to be scheduled on the controlplane/master node.
 
-2. Click `+ Add` for an instance type creation.
+1. Click `Admin Dashboard` in Admin section, then click `Instance Types`.
+
+2. Click `+ Add` for an instance type addition.
 
 3. Fill **tiny** in `Name`, **0.5** in `CPU Limit` and **1.0** in `Memory Limit`.
 
 4. Enable `Global`.
 
-5. Click `Tolerations` tab beside `Basic Info`.
+5. Click tab `Tolerations` beside `Basic Info`.
 
 6. Click `+ Add` for a toleration addition.
 
@@ -31,12 +33,16 @@ While creating an instance type, we will add a toleration which can tolerate the
 
 **Launch JupyterHub**
 
-Go back to **User Portal by clicking **PrimeHub logo** at top-left corner.
+Go back to **User Portal** by clicking **PrimeHub logo** at top-left corner.
 
 1. Click `JupyterHub`.
 
-2. Select the instance type, **tiny** and select the default image, **base-notebook**.
+2. Select the instance type, **tiny** and select the default image, **base-notebook (Universal)**.
 
 3. Click `Start Notebook`
 
-After spawning, you should see a **JupyterHub**.
+It will take a while for spawning. After it, you will see a **JupyterHub**.
+
+That's all. Congratulations you have installed a PrimeHub CE. 
+
+Please don't be too harsh on this Katacoda environment and give PrimeHub CE a try in your circumstance. Enjoy!
