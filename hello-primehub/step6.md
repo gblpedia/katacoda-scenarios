@@ -74,12 +74,11 @@ helm upgrade \
 primehub infuseai/primehub
 ```{{execute}}
 
-**Watch the installation**
+**Wait and Watch**
 
-Open **Terminal 2**, and execute the command to watch pods.
-`watch 'kubectl -n hub get pods'`{{execute}}
+In Terminal 2, `watch 'kubectl -n hub get pods'`{{execute}}
 
-Please wait and ignore the status, `CreateContainerConfigError` until you see all of pods showing `Completed` or `Running`.
+Please wait and ignore the status, `CreateContainerConfigError` until you see all of pods showing `Completed` or `Running` in Ready.
 
 Then go back to first Terminal and wait until you see messages:
 
@@ -106,4 +105,4 @@ PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.
 
 You will see the login dialogue of PrimeHub Console. 
 
-Hooray! PrimeHub CE has been installed and running now. Final step, let's launch a JupyterHub on PrimeHub.
+Hooray! PrimeHub CE has been installed and running now. The final step, let's launch a JupyterHub on PrimeHub.
