@@ -1,6 +1,6 @@
 **Create namespace**
 
-`kubectl create namespace metacontroller`{{execute}}
+`kubectl create namespace metacontroller`{{execute T1}}
 
 **Create service account and role-binding**
 

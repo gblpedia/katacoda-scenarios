@@ -1,6 +1,6 @@
 **Add Helm repo**
 
-`helm repo add codecentric https://codecentric.github.io/helm-charts`{{execute}}
+`helm repo add codecentric https://codecentric.github.io/helm-charts`{{execute T1}}
 
 **Update repo**
 
