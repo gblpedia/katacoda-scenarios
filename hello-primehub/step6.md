@@ -1,7 +1,7 @@
 
 **Add Helm Repo**
 
-`helm repo add infuseai https://charts.infuseai.io`{{execute}}
+`helm repo add infuseai https://charts.infuseai.io`{{execute T1}}
 
 `helm repo update`{{execute}}
 
