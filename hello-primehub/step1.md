@@ -28,7 +28,7 @@ Check if controlplane(master) and node01 are in Ready; wait until two nodes are 
 
 **Helm init**
 
-`helm init --service-account tiller --wait`{{execute}}
+`helm init --wait`{{execute}}
 
 **Tiller role binding**
 
