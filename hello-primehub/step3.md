@@ -1,11 +1,10 @@
 **Helm Install**
 
-`helm install stable/nginx-ingress --namespace ingress-nginx --name nginx-ingress --set controller.hostNetwork=true --set rbac.create=true --wait`{{execute}}
+`helm install stable/nginx-ingress --namespace ingress-nginx --name nginx-ingress --set controller.hostNetwork=true --set rbac.create=true`{{execute}}
 
 **Verify**
 
 `kubectl get svc -n ingress-nginx`{{execute}}
-
 
 
 **Wait and Watch**

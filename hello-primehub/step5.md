@@ -57,20 +57,20 @@ helm upgrade \
   --namespace default  \
   --values keycloak-values.yaml \
   --version 7.2.1 \
+  --timeout 600 \
   --wait \
   keycloak codecentric/keycloak
 ```{{execute}}
 
-**Rollout Keycloak**
+**Wait and Watch**
+
+It will take a while until Keycloak pods are running and in Ready. In Terminal 2, `watch 'kubectl get pods'`{{execute interrupt T2}}
+
+**Verify Keycloak Installation**
 
 `kubectl -n default rollout status sts/keycloak`{{execute}}
 
-**Wait and Watch**
-
-In Terminal 2, `watch 'kubectl get pods'`{{execute interrupt T2}}
-
-
-It will take a while until Keycloak pods are running and in Ready. When Keycloak is running, check Keycloak console https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth
+When Keycloak is running, check Keycloak console https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth
 
 You will see the web console. It's not necessary in the scenario, however, you are able to login **Administration Console** with `keycloak`{{copy}}/`password`{{copy}}.
 
