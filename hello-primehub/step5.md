@@ -57,6 +57,7 @@ helm upgrade \
   --namespace default  \
   --values keycloak-values.yaml \
   --version 7.2.1 \
+  --wait \
   keycloak codecentric/keycloak
 ```{{execute}}
 
