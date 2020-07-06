@@ -1,9 +1,10 @@
 {
   "private": false,
-  "title": "PrimeHub CE Installation v0.0.26",
+  "title": "PrimeHub CE Installation v0.0.27",
   "description": "PrimeHub CE Installation Scenario",
   "difficulty": "beginner",
   "time": "25 minutes",
+  "icon": "PrimeHub_icon_64.png",
   "details": {
     "steps": [
       {
