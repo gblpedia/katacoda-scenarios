@@ -68,10 +68,10 @@ It will take a while until Keycloak pods are running and in Ready. In Terminal 2
 
 **Verify Keycloak Installation**
 
-`kubectl -n default rollout status sts/keycloak`{{execute}}
+`kubectl -n default rollout status sts/keycloak`{{execute T1}}
 
 When Keycloak is running, check Keycloak console https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth
 
 You will see the web console. It's not necessary in the scenario, however, you are able to login **Administration Console** with `keycloak`{{copy}}/`password`{{copy}}.
 
-So far, we have set up the prerequisites for PrimeHub CE. Next step, PrimeHub CE installation.
+So far, we have set up the prerequisites for PrimeHub CE as a PrimeHub-ready Kubernetes. Next step, PrimeHub CE installation.
