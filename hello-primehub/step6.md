@@ -71,7 +71,6 @@ helm upgrade \
 --namespace hub  \
 --values primehub-values.yaml \
 --timeout 3000 \
---wait \
 primehub infuseai/primehub
 ```{{execute}}
 
