@@ -4,11 +4,11 @@
 
 **Download the amd64 version**
 
-`curl -O https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
+`curl -O https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz`{{execute}}
 
 **Extract tar file**
 
-`tar -zxvf helm-v2.16.1-linux-amd64.tar.gz`{{execute}}
+`tar -zxvf helm-v3.2.4-linux-amd64.tar.gz`{{execute}}
 
 **Move**
 
@@ -16,7 +16,7 @@
 
 **Verify**
 
-`helm version --client`{{execute}}
+`helm version`{{execute}}
 
 ### Initialize Helm and Tiller
 

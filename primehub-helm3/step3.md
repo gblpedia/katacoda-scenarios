@@ -1,6 +1,10 @@
 **Helm Install**
 
-`helm install stable/nginx-ingress --namespace ingress-nginx --name nginx-ingress --set controller.hostNetwork=true --set rbac.create=true`{{execute}}
+`helm repo add stable https://kubernetes-charts.storage.googleapis.com`{{execute T1}}
+
+`helm repo update`{{execute}}
+
+`helm install stable/nginx-ingress --create-namespace --namespace ingress-nginx --name nginx-ingress --version=1.31.0 --set controller.hostNetwork=true --set rbac.create=true`{{execute}}
 
 **Wait and Watch**
 
