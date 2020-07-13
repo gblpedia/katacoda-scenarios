@@ -57,7 +57,7 @@ helm upgrade \
   --namespace default  \
   --values keycloak-values.yaml \
   --version 7.2.1 \
-  --timeout 600 \
+  --timeout 10m \
   --wait \
   keycloak codecentric/keycloak
 ```{{execute}}

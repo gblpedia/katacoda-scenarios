@@ -1,6 +1,6 @@
 {
   "private": false,
-  "title": "PrimeHub CE Installation with Helm3 v0.0.3",
+  "title": "PrimeHub CE Installation with Helm3 v0.0.4",
   "description": "PrimeHub CE Installation Scenario with Helm3",
   "difficulty": "beginner",
   "time": "25 minutes",

@@ -68,9 +68,10 @@ It will install the latest PrimeHub CE.
 helm upgrade \
 --install \
 --reset-values \
+--create-namespace \
 --namespace hub  \
 --values primehub-values.yaml \
---timeout 3000 \
+--timeout 10m \
 primehub infuseai/primehub
 ```{{execute}}
 
