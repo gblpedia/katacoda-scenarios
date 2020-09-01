@@ -18,9 +18,6 @@ cat <<EOF > primehub-values.yaml
 primehub:
   domain: ${PRIMEHUB_DOMAIN}
 ingress:
-  annotations:
-    kubernetes.io/ingress.allow-http: "true"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
   hosts:
   -  ${PRIMEHUB_DOMAIN}
 EOF
@@ -41,7 +38,8 @@ primehub infuseai/primehub \
 --create-namespace \
 --namespace hub  \
 --values primehub-values.yaml \
---timeout 10m
+--timeout 10m \
+--devel
 ```{{execute}}
 
 **Wait and Watch**
