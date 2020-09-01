@@ -24,7 +24,7 @@ ingress:
   hosts:
   -  ${PRIMEHUB_DOMAIN}
 EOF
-```
+```{{execute}}
 
 **Verify**
 
@@ -41,7 +41,7 @@ primehub infuseai/primehub \
 --create-namespace \
 --namespace hub  \
 --values primehub-values.yaml \
---timeout 10m \
+--timeout 10m
 ```{{execute}}
 
 **Wait and Watch**
