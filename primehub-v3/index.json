@@ -1,6 +1,6 @@
 {
   "private": false,
-  "title": "PrimeHub CE v3 Installation v0.0.6",
+  "title": "PrimeHub CE v3 Installation v0.0.7",
   "description": "PrimeHub CE v3 Installation Scenario by Helm3",
   "difficulty": "beginner",
   "time": "25 minutes",
@@ -20,17 +20,17 @@
         "text": "step3.md"
       },
       {
-        "title": "Install Keycloak",
-        "text": "step5-old.md"
-      },
-      {
         "title": "Install PrimeHub CE",
         "text": "step4.md"
       },
       {
         "title": "Launch JupyterHub",
         "text": "step5.md"
-      }
+      },
+      {
+        "title": "Install Keycloak",
+        "text": "step6.md"
+      },
     ],
     "intro": {
       "text": "intro.md",
