@@ -16,7 +16,10 @@ PRIMEHUB_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.c
 
 cat <<EOF > primehub-values.yaml
 primehub:
+  scheme: https
   domain: ${PRIMEHUB_DOMAIN}
+  keycloak:
+    scheme: https
 ingress:
   hosts:
   -  ${PRIMEHUB_DOMAIN}
