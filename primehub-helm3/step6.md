@@ -1,77 +1,109 @@
-**Add Helm repo**
 
-`helm repo add codecentric https://codecentric.github.io/helm-charts`{{execute T1}}
+**Add Helm Repo**
 
-**Update repo**
+`helm repo add infuseai https://charts.infuseai.io`{{execute T1}}
 
 `helm repo update`{{execute}}
 
-**Prepare Domain and values file**
-
-Current HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`
-
 **Generate values file**
 
+Since Katacoda supports `https`, we use `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead; it is varied with a circumstance.
+
+Generate `primehub-values.yaml`
+
 ```
+PRIMEHUB_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+PRIMEHUB_PASSWORD=password
 KEYCLOAK_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 KEYCLOAK_PASSWORD=password
-KEYCLOAK_DB_PASSWORD=password
 STORAGE_CLASS=local-path
-
-cat <<EOF > keycloak-values.yaml
-keycloak:
-  ingress:
-    enabled: true
-    annotations:      
-      kubernetes.io/ingress.class: nginx
-      kubernetes.io/tls-acme: "true"    
-      ingress.kubernetes.io/affinity: cookie
-    hosts:
-    - ${KEYCLOAK_DOMAIN}
-    path: /auth
-  username: keycloak
-  password: ${KEYCLOAK_PASSWORD}
-  persistence:    
-    deployPostgres: true
-    dbVendor: postgres
-    dbPassword: ${KEYCLOAK_DB_PASSWORD}
-postgresql:
-  persistence:
-    enabled: true
-    storageClass: ${STORAGE_CLASS}
-  postgresPassword: ${KEYCLOAK_DB_PASSWORD}
+GRAPHQL_SECRET_KEY=$(openssl rand -hex 32)
+HUB_AUTH_STATE_CRYPTO_KEY=$(openssl rand -hex 32)
+HUB_PROXY_SECRET_TOKEN=$(openssl rand -hex 32)
+cat <<EOF > primehub-values.yaml
+primehub:
+  scheme: https
+  domain: ${PRIMEHUB_DOMAIN}
+  keycloak:
+    scheme: https
+    domain: ${KEYCLOAK_DOMAIN}
+    username: keycloak
+    password: ${KEYCLOAK_PASSWORD}
+bootstrap:
+  usernmae: phadmin  
+  password: ${PRIMEHUB_PASSWORD}
+graphql:
+  sharedGraphqlSecret: ${GRAPHQL_SECRET_KEY}
+groupvolume:
+  storageClass: ${STORAGE_CLASS}
+ingress:
+  hosts:
+  -  ${PRIMEHUB_DOMAIN}
+jupyterhub:
+  auth:
+    state:
+      cryptoKey: ${GRAPHQL_SECRET_KEY}
+  hub:
+    db:
+      pvc:
+        storageClassName: ${STORAGE_CLASS}
+  proxy:
+    secretToken: ${HUB_PROXY_SECRET_TOKEN}
+  singleuser:
+    storage:
+      dynamic:
+        storageClass: ${STORAGE_CLASS}
 EOF
 ```{{execute}}
 
-
 **Verify**
 
-`cat keycloak-values.yaml`{{execute}}
+`cat primehub-values.yaml`{{execute}}
 
-**Helm install**
+**Helm Install**
+
+It will install the latest PrimeHub CE.
 
 ```
 helm upgrade \
-  --install \
-  --reset-values \
-  --namespace default  \
-  --values keycloak-values.yaml \
-  --version 7.2.1 \
-  --timeout 10m \
-  --wait \
-  keycloak codecentric/keycloak
+--install \
+--reset-values \
+--create-namespace \
+--namespace hub  \
+--values primehub-values.yaml \
+--timeout 10m \
+primehub infuseai/primehub
 ```{{execute}}
 
 **Wait and Watch**
 
-It will take a while until Keycloak pods are running and in Ready. In Terminal 2, `watch 'kubectl get pods'`{{execute interrupt T2}}
+In Terminal 2, `watch 'kubectl -n hub get pods'`{{execute interrupt T2}}
 
-**Verify Keycloak Installation**
+Please wait and ignore the status, `CreateContainerConfigError` until you see all of pods showing `Completed` or `Running` in Ready.
 
-`kubectl -n default rollout status sts/keycloak`{{execute T1}}
+Then go back to first Terminal and wait until you see messages:
 
-When Keycloak is running, check Keycloak console https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth
+```
+NOTES:
+PrimeHub is installed at:
 
-You will see the web console. It's not necessary in the scenario, however, you are able to login **Administration Console** with `keycloak`{{copy}}/`password`{{copy}}.
+To get the login account, please enter the following commands:
+  echo "username: phadmin"
+  echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
+```
 
-So far, we have set up the prerequisites for PrimeHub CE as a PrimeHub-ready Kubernetes. Next step, PrimeHub CE installation.
+
+**Label Nodes**
+
+In the first Terminal.
+
+`kubectl label node component=singleuser-server --all`{{execute}}
+
+
+**Check PrimeHub Console**
+
+PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+
+You will see the login dialogue of PrimeHub Console. 
+
+Hooray! PrimeHub CE has been installed and running now. The final step, let's launch a JupyterHub on PrimeHub.
