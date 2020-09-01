@@ -1,6 +1,6 @@
 {
   "private": false,
-  "title": "PrimeHub CE v3 Installation v0.0.5",
+  "title": "PrimeHub CE v3 Installation v0.0.6",
   "description": "PrimeHub CE v3 Installation Scenario by Helm3",
   "difficulty": "beginner",
   "time": "25 minutes",
@@ -18,6 +18,10 @@
       {
         "title": "Install Nginx-ingress",
         "text": "step3.md"
+      },
+      {
+        "title": "Install Keycloak",
+        "text": "step5-old.md"
       },
       {
         "title": "Install PrimeHub CE",
