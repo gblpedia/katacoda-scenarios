@@ -18,8 +18,6 @@
 
 `helm version`{{execute}}
 
-### Initialize Helm and Tiller
-
 **Check if two nodes are ready**
 
 Check if controlplane(master) and node01 are in Ready; wait until two nodes are in Ready.

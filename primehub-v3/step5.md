@@ -1,77 +1,54 @@
-**Add Helm repo**
 
-`helm repo add codecentric https://codecentric.github.io/helm-charts`{{execute T1}}
+**Login**
 
-**Update repo**
+Login PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com as `phadmin`{{copy}}/`<the_password>`.
 
-`helm repo update`{{execute}}
+The landing page is **User Portal**.
 
-**Prepare Domain and values file**
+**Create Instance Type**
 
-Current HOST2 Domain: `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`
+Due to the shortage of the allocatable cpu resource in Katacoda environment, we are required to create a specific instance type for this scenario. In a real circumstance, *it is not required and not recommended*.
 
-**Generate values file**
+While creating an instance type, we will add a **toleration** which can tolerate the tainted controlplane(master) node so that JupyterHub pod is allowed to be scheduled on the controlplane/master node.
 
-```
-KEYCLOAK_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
-KEYCLOAK_PASSWORD=password
-KEYCLOAK_DB_PASSWORD=password
-STORAGE_CLASS=local-path
+1. Hover the cursor over the top-right icon, from a dropdown menu, click `Admin Portal`, then select `Instance Types` from the side menu.
 
-cat <<EOF > keycloak-values.yaml
-keycloak:
-  ingress:
-    enabled: true
-    annotations:      
-      kubernetes.io/ingress.class: nginx
-      kubernetes.io/tls-acme: "true"    
-      ingress.kubernetes.io/affinity: cookie
-    hosts:
-    - ${KEYCLOAK_DOMAIN}
-    path: /auth
-  username: keycloak
-  password: ${KEYCLOAK_PASSWORD}
-  persistence:    
-    deployPostgres: true
-    dbVendor: postgres
-    dbPassword: ${KEYCLOAK_DB_PASSWORD}
-postgresql:
-  persistence:
-    enabled: true
-    storageClass: ${STORAGE_CLASS}
-  postgresPassword: ${KEYCLOAK_DB_PASSWORD}
-EOF
-```{{execute}}
+2. Click `+ Add` for an instance type addition.
 
+3. Fill **tiny** in `Name`, **0.5** in `CPU Limit` and **1.0** in `Memory Limit`.
 
-**Verify**
+4. Enable `Global`.
 
-`cat keycloak-values.yaml`{{execute}}
+5. Click the tab `Tolerations` beside the tab `Basic Info`.
 
-**Helm install**
+6. Click `+ Add` for a toleration addition.
 
-```
-helm upgrade \
-  --install \
-  --reset-values \
-  --namespace default  \
-  --values keycloak-values.yaml \
-  --version 7.2.1 \
-  --timeout 10m \
-  --wait \
-  keycloak codecentric/keycloak
-```{{execute}}
+7. Fill `node-role.kubernetes.io/master`{{copy}} in `Key`.
 
-**Wait and Watch**
+8. Select `Exists` from `Operator`.
 
-It will take a while until Keycloak pods are running and in Ready. In Terminal 2, `watch 'kubectl get pods'`{{execute interrupt T2}}
+9. Select `NoSchedule` from `Effect` and click `OK`.
 
-**Verify Keycloak Installation**
+10. Click `Confirm`.
 
-`kubectl -n default rollout status sts/keycloak`{{execute T1}}
+**Launch JupyterHub**
 
-When Keycloak is running, check Keycloak console https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/auth
+Go back to **User Portal** by clicking **PrimeHub logo** at top-left corner.
 
-You will see the web console. It's not necessary in the scenario, however, you are able to login **Administration Console** with `keycloak`{{copy}}/`password`{{copy}}.
+1. Click `JupyterHub`.
 
-So far, we have set up the prerequisites for PrimeHub CE as a PrimeHub-ready Kubernetes. Next step, PrimeHub CE installation.
+2. Select the instance type, **tiny** and select the default image, **base-notebook (Universal)**.
+
+3. Click `Start Notebook` and wait to see two `Stop My Sever` and `My Server` buttons on the page.
+
+4. The JupyterHub is poped-up as a new tab, ususally, it is blocked initially by the browser.
+
+5. Click the pop-up-blocked icon at the rightmost side of url bar to allow the pop-ups.
+
+6. Click `My Server`, the JupyterHub will be opend in a new tab 
+
+It will take a while for spawning. After it, you will see your JupyterHub.
+
+That's all. Feel free to try PrimeHub CE. Please don't be too harsh on this Katacoda environment.
+
+Hope you like it. Why not giving PrimeHub CE a try in your circumstance. Enjoy!
