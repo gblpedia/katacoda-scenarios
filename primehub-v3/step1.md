@@ -24,4 +24,4 @@
 
 Check if controlplane(master) and node01 are in Ready; wait until two nodes are in Ready.
 
-`kubectl get nodes`{{execute}}
+`kubectl get nodes`{{execute interrupt T2}}

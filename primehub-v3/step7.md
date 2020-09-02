@@ -1,9 +1,9 @@
 
 **Login**
 
-Login PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com as `phadmin`{{copy}}/`password`{{copy}}.
+Login PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com as `phadmin`{{copy}}/`<the_password>`.
 
-You will see the User Portal.
+The landing page is **User Portal**.
 
 **Create Instance Type**
 
@@ -11,7 +11,7 @@ Due to the shortage of the allocatable cpu resource in Katacoda environment, we 
 
 While creating an instance type, we will add a **toleration** which can tolerate the tainted controlplane(master) node so that JupyterHub pod is allowed to be scheduled on the controlplane/master node.
 
-1. Click `Admin Dashboard` in Admin section, then click `Instance Types`.
+1. Hover the cursor over the top-right icon, from a dropdown menu, click `Admin Portal`, then select `Instance Types` from the side menu.
 
 2. Click `+ Add` for an instance type addition.
 
@@ -39,9 +39,15 @@ Go back to **User Portal** by clicking **PrimeHub logo** at top-left corner.
 
 2. Select the instance type, **tiny** and select the default image, **base-notebook (Universal)**.
 
-3. Click `Start Notebook`
+3. Click `Start Notebook` and wait to see two `Stop My Sever` and `My Server` buttons on the page.
 
-It will take a while for spawning. After it, you will see a JupyterHub.
+4. The JupyterHub is poped-up as a new tab, ususally, it is blocked initially by the browser.
+
+5. Click the pop-up-blocked icon at the rightmost side of url bar to allow the pop-ups.
+
+6. Click `My Server`, the JupyterHub will be opend in a new tab 
+
+It will take a while for spawning. After it, you will see your JupyterHub.
 
 That's all. Feel free to try PrimeHub CE. Please don't be too harsh on this Katacoda environment.
 

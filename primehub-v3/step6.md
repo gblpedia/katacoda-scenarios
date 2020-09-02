@@ -62,6 +62,13 @@ To get the login account, please enter the following commands:
   echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
 ```
 
+According the instruction, let's find out the password of account, `phadmin`.
+```
+echo "username: phadmin"
+echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
+```{{execute}}
+
+Keep/copy the password, we will need it at the final step.
 
 **Label Nodes**
 
@@ -77,3 +84,5 @@ PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.
 You will see the login dialogue of PrimeHub Console.
 
 Hooray! PrimeHub CE has been installed and is running now. The final step, let's launch a JupyterHub on PrimeHub.
+
+Don't forget the password!
