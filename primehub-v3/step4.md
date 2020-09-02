@@ -8,7 +8,9 @@
 
 **Generate values file**
 
-Since Katacoda supports **https** only, we add `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead; In a real circumstance, http or https depends on your demand. *Be noticed* that this part of primehub-values.yaml is slightly *different* with the instruction on our [CE repo](https://github.com/InfuseAI/primehub).
+Since Katacoda supports **https** only, we add `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead; In a real circumstance, http or https depends on your demand. 
+
+*Be noticed* that this part of primehub-values.yaml is *slightly different* with the instruction on our [CE repo](https://github.com/InfuseAI/primehub).
 
 Generate `primehub-values.yaml`.
 
@@ -50,7 +52,7 @@ primehub infuseai/primehub \
 
 In Terminal 2, `watch 'kubectl -n hub get pods'`{{execute interrupt T2}}
 
-Please wait and ignore the status, `CreateContainerConfigError` until you see `primehub-bootstrap-xxx` pod is **Completed** and other pods are `Completed` or `Running` in Ready.
+Please wait and ignore the interim status, `CreateContainerConfigError` until you see **primehub-bootstrap-xxx** pod and **admission-post-install-job-xxx** pod are **Completed** and other pods are **Running** in Ready(1/1).
 
 Then go back to first Terminal and wait until you see messages:
 

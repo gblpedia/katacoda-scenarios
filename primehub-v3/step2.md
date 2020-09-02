@@ -3,7 +3,7 @@ In this experimental scenario, we use storageclass, `local-path`; in a real circ
 
 **Apply**
 
-`kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml`{{execute}}
+`kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml`{{execute T1}}
 
 **Patch**
 
