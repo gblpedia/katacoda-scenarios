@@ -1,4 +1,5 @@
 
+
 **Add Helm Repo**
 
 `helm repo add infuseai https://charts.infuseai.io`{{execute T1}}
@@ -7,9 +8,9 @@
 
 **Generate values file**
 
-Since Katacoda supports `https`, we use `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead; it is varied with a circumstance.
+Since Katacoda supports **https** only, we add `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead; In a real circumstance, http or https depends on your demand. *Be noticed* that this part of primehub-values.yaml is slightly *different* with the instruction on our [CE repo](https://github.com/InfuseAI/primehub).
 
-Generate `primehub-values.yaml`
+Generate `primehub-values.yaml`.
 
 ```
 PRIMEHUB_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
@@ -49,7 +50,7 @@ primehub infuseai/primehub \
 
 In Terminal 2, `watch 'kubectl -n hub get pods'`{{execute interrupt T2}}
 
-Please wait and ignore the status, `CreateContainerConfigError` until you see `primehub-bootstrap-xxx` pod is **Completed**.  Other pods show `Completed` or `Running` in Ready.
+Please wait and ignore the status, `CreateContainerConfigError` until you see `primehub-bootstrap-xxx` pod is **Completed** and other pods are `Completed` or `Running` in Ready.
 
 Then go back to first Terminal and wait until you see messages:
 
@@ -68,7 +69,7 @@ echo "username: phadmin"
 echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
 ```{{execute}}
 
-Keep/copy the password, we will need it at the final step.
+Keep/copy the password somewhere, we will need it at the final step.
 
 **Label Nodes**
 
