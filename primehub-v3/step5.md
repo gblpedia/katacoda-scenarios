@@ -23,7 +23,7 @@ While creating an instance type, we will add a **toleration** which can *tolerat
 
 6. Click `+ Add` for a toleration creation.
 
-7. Fill `**node-role.kubernetes.io/master**`{{copy}} in `Key`.
+7. Fill `node-role.kubernetes.io/master`{{copy}} in `Key`.
 
 8. Select **Exists** from `Operator`.
 
