@@ -1,3 +1,14 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123266454-4');
+</script>
+
+
 ## Welcome to PrimeHub CE v3 installation scenario.
 
 The purpose of this scenario is to let audience to feel how easy the brand new PrimeHub CE v3 installation could be.
