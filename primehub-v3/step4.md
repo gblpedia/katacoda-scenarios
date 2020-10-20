@@ -71,7 +71,7 @@ echo "username: phadmin"
 echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
 ```{{execute}}
 
-Keep/copy the password somewhere, we will need it at the final step.
+Keep/memorize the password somewhere, we will need it at the final step.
 
 **Label Nodes**
 
@@ -82,7 +82,7 @@ In the first Terminal.
 
 **Patch Instance Type**
 
-Due to the shortage of the cpu/memory resources in Katacoda environment, we are required to patch one of default **instance types** in this scenario. Regarding real circumstances, *it is not required*.
+Due to the shortage of the cpu/memory resources in Katacoda environment, we are required to patch one of default instance types in this scenario. Regarding real circumstances, *it is not required*.
 
 Run the patch
 
@@ -91,12 +91,12 @@ kubectl -n hub patch instancetype cpu-1 --type merge -p '{"spec":{"limits.cpu": 
 ```{{execute}}
 
 
-**Check PrimeHub Console**
+**Visit PrimeHub Console**
 
 PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
-You will see the login dialogue of PrimeHub Console.
+You should see the login page of PrimeHub Console.
 
-Hooray! PrimeHub CE has been installed and is running now. The final step, let's launch a JupyterHub on PrimeHub.
+Hooray! PrimeHub CE has been installed and is running now. The final step, let's launch a Jupyter Notebook on PrimeHub.
 
 Don't forget the password!

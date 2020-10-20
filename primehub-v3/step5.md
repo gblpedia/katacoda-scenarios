@@ -19,6 +19,6 @@ The landing page is called **User Portal**.
 
 That's all. Feel free to try PrimeHub CE and check out [documentation](https://docs.primehub.io/docs/getting-started-user).
 
-*Please be noticed that Katacoda environment could be time out anytime.* Don't be too harsh on this Katacoda environment.
+Don't be too harsh on this Katacoda environment and *please be noticed that Katacoda environment could be timeout anytime.* 
 
 If you like it, why not giving PrimeHub CE a try in your circumstance to start a real project. Enjoy!

@@ -17,7 +17,7 @@ In this scenario, we will walk you through the installation steps referring to [
 
 + From step 1 to step 3, we will set up a PrimeHub-ready Kubernetes.
 + In step 4, we will install PrimeHub CE.
-+ In the final step, we will launch a JupyterHub on PrimeHub.
++ In the final step, we will launch a Jupyter Notebook on PrimeHub.
 + Grab a cup of coffee and start the scenario.
 
 **Tips**: just clicking the code-blocks in each step, the code will be executed in terminal or copied without any typing.
