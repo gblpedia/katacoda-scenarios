@@ -1,14 +1,14 @@
 {
   "private": false,
   "title": "PrimeHub CE v3 Installation",
-  "description": "PrimeHub CE v3 Installation Scenario (v0.2.3)",
+  "description": "PrimeHub CE v3 Installation Scenario (v0.2.4)",
   "difficulty": "beginner",
   "time": "25 minutes",
   "icon": "icon.png",
   "details": {
     "steps": [
       {
-        "title": "Install Helm v3.2.4",
+        "title": "Install Helm v3.x",
         "text": "step1.md"
       },
       {

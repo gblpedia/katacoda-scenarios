@@ -1,6 +1,6 @@
 
 
-**Add Helm Repo**
+**Add InfuseAI Helm Repo**
 
 `helm repo add infuseai https://charts.infuseai.io`{{execute T1}}
 
@@ -10,7 +10,7 @@
 
 Since Katacoda supports **https** only, we add `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead; In a real circumstance, http or https depends on your demand. 
 
-*Be noticed* that this part of primehub-values.yaml is *slightly different* with the instruction on our [CE repo](https://github.com/InfuseAI/primehub).
+*Be noticed* that this part of primehub-values.yaml is *slightly different* with the instructions on our [CE repo](https://github.com/InfuseAI/primehub).
 
 Generate `primehub-values.yaml`.
 
@@ -78,6 +78,17 @@ Keep/copy the password somewhere, we will need it at the final step.
 In the first Terminal.
 
 `kubectl label node component=singleuser-server --all`{{execute}}
+
+
+**Patch Instance Type**
+
+Due to the shortage of the cpu/memory resources in Katacoda environment, we are required to patch one of default **instance types** in this scenario. Regarding real circumstances, *it is not required*.
+
+Run the patch
+
+```
+kubectl -n hub patch instancetype cpu-1 --type merge -p '{"spec":{"limits.cpu": 0.5, "requests.cpu": 0.5, "limits.memory": "1G", "requests.memory": "1G", "tolerations":[{"effect":"NoSchedule", "key": "node-role.kubernetes.io/master", "operator":"Exists"}]}}'
+```{{execute}}
 
 
 **Check PrimeHub Console**
