@@ -54,27 +54,5 @@ Please be noticed that Katacoda environment could be time out soon anytime. Don'
 Hope you like it. Why not giving PrimeHub CE a try in your circumstance to start a real project. Enjoy!
 
 ```
-cat <<EOF > tiny-instance.yaml
-apiVersion: primehub.io/v1alpha1
-kind: InstanceType
-metadata:
-  name: tiny
-  namespace: hub
-spec:
-  description: 0.5 CPU / 1G
-  displayName: tiny
-  limits.cpu: 0.5
-  limits.memory: 1G
-  limits.nvidia.com/gpu: 0
-  requests.cpu: 0.5
-  requests.memory: 1G
-  tolerations:
-  - effect: NoSchedule
-    key: node-role.kubernetes.io/master
-    operator: Exists
-EOF
-```{{execute}}
-
-```
-kubectl -n hub apply -f tiny-instance.yaml
-```{{execute}}
+kubectl -n hub patch instancetype cpu-1 --type merge -p '{"spec":{"limits.cpu": 0.5, "requests.cpu": 0.5, "tolerations":[{"effect":"NoSchedule", "key": "node-role.kubernetes.io/master", "operator":"Exists"}]}}
+```{{copy}}
