@@ -15,15 +15,16 @@ The purpose of this scenario is to let audience to feel how easy the brand new P
 
 In this scenario, we will walk you through the installation steps referring to [PrimeHub CE repo](https://github.com/InfuseAI/primehub/blob/master/INSTALL.md).
 
-+ From step 1 to step 3, we will set up a PrimeHub-ready Kubernetes.
-+ In step 4, we will install PrimeHub CE.
-+ In the final step, we will launch a Jupyter Notebook on PrimeHub.
-+ Grab a cup of coffee and start the scenario.
++ Step 1 to step 3: Set up a PrimeHub-ready Kubernetes cluster.
++ Step 4, Install PrimeHub CE.
++ Step 5, Launch a Jupyter Notebook in PrimeHub.
 
-**Tips**: just clicking the code-blocks in each step, the code will be executed in terminal or copied without any typing.
+Grab a cup of coffee and let's the scenario.
+
+**Tips**: Simply click the code-blocks in each step to execute the code without need to type anything.
 
 ## Notice
 
-+ The behaviour of PrimeHub could be affected by a unstable/resource-shortage Katacoda environment.
-+ Katacoda environment could be timeout or have connection problems during the scenario, just refresh the page to restart the scenario.
-+ Please try PrimeHub CE in a real circumstance to learn more about PrimeHub judiciously.
++ The behaviour of PrimeHub can be affected by an unstable/resource-shortage Katacoda environment.
++ If your Katacoda environment times out or has connection problems during the scenario, just refresh the page to restart the scenario.
++ After you launch a notebook in PrimeHub, please try using PrimeHub CE with your own real-life scenario for some hands-on experience.

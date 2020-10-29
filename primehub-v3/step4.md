@@ -10,7 +10,7 @@
 
 Since Katacoda supports **https** only, we add `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead; In a real circumstance, http or https depends on your demand. 
 
-*Be noticed* that this part of primehub-values.yaml is *slightly different* with the instructions on our [CE repo](https://github.com/InfuseAI/primehub).
+*Notice* that this part of primehub-values.yaml is *slightly different* than the instructions on our [CE repo](https://github.com/InfuseAI/primehub).
 
 Generate `primehub-values.yaml`.
 
@@ -82,7 +82,7 @@ In the first Terminal.
 
 **Patch Instance Type**
 
-Due to the shortage of the cpu/memory resources in Katacoda environment, we are required to patch one of default instance types in this scenario. Regarding real circumstances, *it is not required*.
+Due to the shortage of the cpu/memory resources in Katacoda environment, we are required to patch one of default instance types in this scenario.  In a real circumstance, this step may not be required.
 
 Run the patch
 

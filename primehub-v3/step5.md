@@ -11,14 +11,14 @@ The landing page is called **User Portal**.
 
 3. Click `Start Notebook` and wait until the spawning is finished and see two `Stop My Sever` and `My Server` buttons on the page.
 
-4. The Jupyter Notebook is popped up as a new tab, usually, *it is blocked by the browser by default*.
+4. Click `My Server`. The Jupyter Notebook will open in a new tab. You may have to disable your browser's pop-up blocker. Click the 'pop-up-blocked' icon in the rightmost side of URL bar to allow pop-up.
 
 5. Click the **pop-up-blocked** icon at the rightmost side of url bar to allow the pop-ups.
 
 6. Click `My Server`, the Notebook will be opened in a new tab.
 
-That's all. Feel free to try PrimeHub CE and check out [documentation](https://docs.primehub.io/docs/getting-started-user).
+That's it. Feel free to continuing to try out PrimeHub CE and take a look at out [documentation](https://docs.primehub.io/docs/getting-started-user).
 
-Don't be too harsh on this Katacoda environment and *please be noticed that Katacoda environment could be timeout anytime.* 
+*Please beware that Katacoda environment can timeout at any time.*
 
-If you like it, why not giving PrimeHub CE a try in your circumstance to start a real project. Enjoy!
+Thanks for walking through this scenario and enjoy! Email **hi@infuseai.io** for any feedback, comments, or suggestions.
