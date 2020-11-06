@@ -1,0 +1,48 @@
+{
+  "private": false,
+  "title": "PrimeHub CE v3 Single Node",
+  "description": "PrimeHub CE v3 Single Node Installation Scenario (v0.0.1)",
+  "difficulty": "beginner",
+  "time": "25 minutes",
+  "icon": "icon.png",
+  "details": {
+    "steps": [
+      {
+        "title": "Install Helm v3.x",
+        "text": "step1.md"
+      },
+      {
+        "title": "Set up StorageClass",
+        "text": "step2.md"
+      },
+      {
+        "title": "Install Nginx-ingress",
+        "text": "step3.md"
+      },
+      {
+        "title": "Install PrimeHub CE",
+        "text": "step4.md"
+      },
+      {
+        "title": "Launch JupyterHub",
+        "text": "step5.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "terminals": [{"name": "Terminal 2", "target": "host01"}],
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive K8S Terminal.\r\nPlease wait until Kubernetes is ready`\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running:1.18"
+  }
+}
