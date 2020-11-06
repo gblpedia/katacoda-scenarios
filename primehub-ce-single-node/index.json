@@ -1,7 +1,7 @@
 {
   "private": false,
   "title": "PrimeHub CE v3 Single Node",
-  "description": "PrimeHub CE v3 Single Node Installation Scenario (v0.0.1)",
+  "description": "PrimeHub CE v3 Single Node Installation Scenario (v0.0.2)",
   "difficulty": "beginner",
   "time": "25 minutes",
   "icon": "icon.png",
@@ -43,6 +43,6 @@
     "uimessage1": "\u001b[32mYour Interactive K8S Terminal.\r\nPlease wait until Kubernetes is ready`\u001b[m\r\n"
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18"
+    "imageid": "ubuntu1804"
   }
 }
