@@ -30,6 +30,9 @@ curl http://1.2.3.4.nip.io
 ./primehub-install create primehub --primehub-version v3.1.0 --primehub-ce --helm-timeout 6000 --skip-domain-check
 ```{{execute}}
 
+
+>check https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+
 ```
 watch kubectl get pod -n hub
 ```{{execute T2}}

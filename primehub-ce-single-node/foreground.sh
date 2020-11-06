@@ -1,1 +1,1 @@
-launch.sh
+export PATH=/root/bin:$PATH
