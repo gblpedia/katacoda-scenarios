@@ -44,8 +44,7 @@ primehub infuseai/primehub \
 --create-namespace \
 --namespace hub  \
 --values primehub-values.yaml \
---timeout 10m \
---devel
+--timeout 10m
 ```{{execute}}
 
 **Wait and Watch**
