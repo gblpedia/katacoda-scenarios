@@ -21,17 +21,21 @@ mkdir -p /root/.helm/plugins
 ```{{execute}}
 
 ```
-curl http://1.2.3.4.nip.io
+curl https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 ```{{execute}}
 
 >default backend - 404
 
 ```
-./primehub-install create primehub --primehub-version v3.1.0 --primehub-ce --helm-timeout 6000 --skip-domain-check
+./primehub-install create primehub --primehub-version v3.1.0 --primehub-ce --helm-timeout 30m --skip-domain-check
 ```{{execute}}
 
 
->check https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+check https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+
+```
+[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+```{{copy}}
 
 ```
 watch kubectl get pod -n hub
