@@ -5,6 +5,8 @@ In this experimental scenario, we use storageclass, `local-path`; in a real circ
 
 `kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml`{{execute T1}}
 
+`kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.17/deploy/local-path-storage.yaml`{{execute T1}}
+
 **Patch**
 
 `kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`{{execute}}
