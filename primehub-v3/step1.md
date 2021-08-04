@@ -31,7 +31,10 @@ Check if **controlplane(master)** and **node01** are in Ready; wait until two no
 `echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc`{{execute}}
 `source ~/.bashrc`{{execute}}
 
-`./primehub/install/primehub-install create primehub --primehub-ce`{{execute}}
+`./primehub/install/primehub-install create primehub --primehub-ce --skip-domain-check --enable-https`{{execute}}
 
 phadmin `password`{{execute}}
-keycloak `password`{{execute}}
+keycloak `password`{{execute}}o
+
+`helm install nginx-ingress ingress-nginx/ingress-nginx --create-namespace --namespace ingress-nginx --set controller.hostNetwork=true --set rbac.create=true`{{execute}}
+
