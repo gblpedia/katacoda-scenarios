@@ -19,3 +19,19 @@
 Check if **controlplane(master)** and **node01** are in Ready; wait until two nodes are in Ready.
 
 `watch 'kubectl get nodes'`{{execute interrupt T2}}
+
+
+`git clone https://github.com/InfuseAI/primehub`{{execute}}
+
+`./primehub/install/primehub-install`{{execute}}
+
+`./primehub/install/primehub-install required-bin`{{execute}}
+
+
+`echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc`{{execute}}
+`source ~/.bashrc`{{execute}}
+
+`./primehub/install/primehub-install create primehub --primehub-ce`{{execute}}
+
+phadmin `password`{{execute}}
+keycloak `password`{{execute}}
