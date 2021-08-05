@@ -11,9 +11,9 @@
 
 ## Welcome to PrimeHub CE v3 installation scenario.
 
-The purpose of this scenario is to walk audience through PrimeHub CE v3.c easy installation.
+The purpose of this scenario is to walk audience through PrimeHub CE v3.c easy installation on 2-Node Kubernetes cluster.
 
-+ Step 1 to step 2: Set up a PrimeHub-ready Kubernetes cluster.
++ Step 1 to step 2: Set up an existing 2-Node Kubernetes cluster to become PrimeHub-ready cluster.
 + Step 3: Install PrimeHub CE.
 + Step 4: Launch a Jupyter Notebook in PrimeHub.
 
