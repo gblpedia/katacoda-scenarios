@@ -17,9 +17,9 @@ The purpose of this scenario is to walk audience through PrimeHub CE v3.c easy i
 + Step 3: Install PrimeHub CE.
 + Step 4: Launch a Jupyter Notebook in PrimeHub.
 
-Grab a cup of coffee and let's the scenario.
+Grab a cup of coffee and start the scenario.
 
-▶️[PrimeHub CE GitHub repo](https://github.com/InfuseAI/primehub)
+▶️ Visit [PrimeHub CE GitHub repo](https://github.com/InfuseAI/primehub) for the detail.
 
 **Tips**: Simply click the code-blocks in each step to execute the code without need to type anything.
 
