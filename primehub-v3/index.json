@@ -1,7 +1,7 @@
 {
   "private": false,
-  "title": "PrimeHub CE v3.x Easy Installation",
-  "description": "PrimeHub CE v3.x Installation Walk-through (v0.5.9)",
+  "title": "PrimeHub CE v3.x Easy Installation (2-Node)",
+  "description": "PrimeHub CE v3.x Installation Walk-through (2 node cluster with 1 main, 1 node. Based on Ubuntu.)(v0.6.0)",
   "difficulty": "beginner",
   "time": "25 minutes",
   "icon": "icon.png",
