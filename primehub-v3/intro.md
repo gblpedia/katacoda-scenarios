@@ -11,15 +11,15 @@
 
 ## Welcome to PrimeHub CE v3 installation scenario.
 
-The purpose of this scenario is to let audience to feel how easy the brand new PrimeHub CE v3 installation could be.
-
-In this scenario, we will walk you through the installation steps referring to [PrimeHub CE repo](https://github.com/InfuseAI/primehub/blob/master/INSTALL.md).
+The purpose of this scenario is to walk audience through PrimeHub CE v3.c easy installation.
 
 + Step 1 to step 2: Set up a PrimeHub-ready Kubernetes cluster.
 + Step 3: Install PrimeHub CE.
 + Step 4: Launch a Jupyter Notebook in PrimeHub.
 
 Grab a cup of coffee and let's the scenario.
+
+▶️[PrimeHub CE GitHub repo](https://github.com/InfuseAI/primehub)
 
 **Tips**: Simply click the code-blocks in each step to execute the code without need to type anything.
 
