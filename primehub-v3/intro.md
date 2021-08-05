@@ -19,7 +19,7 @@ The purpose of this scenario is to walk audience through PrimeHub CE v3.c easy i
 
 Grab a cup of coffee and start the scenario.
 
-▶️ Visit [PrimeHub CE GitHub repo](https://github.com/InfuseAI/primehub) for the detail.
+▶️ Visit [PrimeHub CE GitHub repo](https://github.com/InfuseAI/primehub) and [PrimeHub Documentation](https://docs.primehub.io/)for the detail.
 
 **Tips**: Simply click the code-blocks in each step to execute the code without need to type anything.
 
