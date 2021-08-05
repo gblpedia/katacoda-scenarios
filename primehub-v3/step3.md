@@ -26,7 +26,6 @@ Please wait and ignore the interim status, `CreateContainerConfigError` until yo
 Then go back to first Terminal and wait until you see messages:
 
 ```
-NOTES:
 [Completed] Install PrimeHub
 
   PrimeHub:   https://XXXXXXXX.environments.katacoda.com  ( phadmin / password )
@@ -34,12 +33,6 @@ NOTES:
 
 [Completed]"
 ```
-
-**Label Nodes**
-
-In the first Terminal.
-
-`kubectl label node component=singleuser-server --all`{{execute T1}}
 
 
 **Patch Instance Type**

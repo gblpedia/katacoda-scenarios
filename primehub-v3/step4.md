@@ -17,7 +17,7 @@ The landing page is called **User Portal**.
 
 6. Click `My Server`, the Notebook will be opened in a new tab.
 
-That's it. Feel free to continuing to try out PrimeHub CE and take a look at out [documentation](https://docs.primehub.io/docs/getting-started-user).
+That's it. Feel free to continuing to try out PrimeHub CE and take a look at out [documentation](https://docs.primehub.io/docs/introduction).
 
 *Please beware that Katacoda environment can timeout at any time.*
 
