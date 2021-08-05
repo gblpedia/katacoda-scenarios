@@ -1,27 +1,31 @@
 {
   "private": false,
-  "title": "PrimeHub CE v3 Easy Installation",
-  "description": "PrimeHub CE v3.x Installation Walk-through (v0.5.2",
+  "title": "PrimeHub CE v3 Installation",
+  "description": "PrimeHub CE v3.x Installation Walk-through (v0.5.1)",
   "difficulty": "beginner",
   "time": "25 minutes",
   "icon": "icon.png",
   "details": {
     "steps": [
       {
-        "title": "Set up StorageClass",
+        "title": "Install Helm v3.x",
         "text": "step1.md"
       },
       {
-        "title": "Install Nginx-ingress",
+        "title": "Set up StorageClass",
         "text": "step2.md"
       },
       {
-        "title": "Install PrimeHub CE",
+        "title": "Install Nginx-ingress",
         "text": "step3.md"
       },
       {
-        "title": "Launch Jupyter Notebook",
+        "title": "Install PrimeHub CE",
         "text": "step4.md"
+      },
+      {
+        "title": "Launch JupyterHub",
+        "text": "step5.md"
       }
     ],
     "intro": {

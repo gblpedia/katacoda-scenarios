@@ -1,101 +1,24 @@
 
+**Login**
 
-**Add InfuseAI Helm Repo**
+Login PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com as `phadmin`{{copy}}/`<the_password>`.
 
-`helm repo add infuseai https://charts.infuseai.io`{{execute T1}}
+The landing page is called **User Portal**.
 
-`helm repo update`{{execute}}
+1. Select `Notebook` from the side menu.
 
-**Generate values file**
+2. Select the instance type, **cpu-1** and select the image, **base-notebook (Universal)**.
 
-Since Katacoda supports **https** only, we add `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead; In a real circumstance, http or https depends on your demand. 
+3. Click `Start Notebook` and wait until the spawning is finished and see two `Stop My Sever` and `My Server` buttons on the page.
 
-*Notice* that this part of primehub-values.yaml is *slightly different* than the instructions on our [CE repo](https://github.com/InfuseAI/primehub).
+4. Click `My Server`. The Jupyter Notebook will open in a new tab. You may have to disable your browser's pop-up blocker. Click the 'pop-up-blocked' icon in the rightmost side of URL bar to allow pop-up.
 
-Generate `primehub-values.yaml`.
+5. Click the **pop-up-blocked** icon at the rightmost side of url bar to allow the pop-ups.
 
-```
-PRIMEHUB_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+6. Click `My Server`, the Notebook will be opened in a new tab.
 
-cat <<EOF > primehub-values.yaml
-primehub:
-  scheme: https
-  domain: ${PRIMEHUB_DOMAIN}
-  keycloak:
-    scheme: https
-ingress:
-  hosts:
-  -  ${PRIMEHUB_DOMAIN}
-EOF
-```{{execute}}
+That's it. Feel free to continuing to try out PrimeHub CE and take a look at out [documentation](https://docs.primehub.io/docs/getting-started-user).
 
-**Verify**
+*Please beware that Katacoda environment can timeout at any time.*
 
-`cat primehub-values.yaml`{{execute}}
-
-**Helm Install**
-
-It will install the latest PrimeHub CE.
-
-```
-helm upgrade \
-primehub infuseai/primehub \
---install \
---create-namespace \
---namespace hub  \
---values primehub-values.yaml \
---timeout 10m
-```{{execute}}
-
-**Wait and Watch**
-
-In Terminal 2, `watch 'kubectl -n hub get pods'`{{execute interrupt T2}}
-
-Please wait and ignore the interim status, `CreateContainerConfigError` until you see **primehub-bootstrap-xxx** pod and **admission-post-install-job-xxx** pod are **Completed** and other pods are **Running** in Ready(1/1).
-
-Then go back to first Terminal and wait until you see messages:
-
-```
-NOTES:
-PrimeHub is installed at:
-
-To get the login account, please enter the following commands:
-  echo "username: phadmin"
-  echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
-```
-
-According the instruction, let's find out the password of account, `phadmin`.
-```
-echo "username: phadmin"
-echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
-```{{execute}}
-
-Keep/memorize the password somewhere, we will need it at the final step.
-
-**Label Nodes**
-
-In the first Terminal.
-
-`kubectl label node component=singleuser-server --all`{{execute}}
-
-
-**Patch Instance Type**
-
-Due to the shortage of the cpu/memory resources in Katacoda environment, we are required to patch one of default instance types in this scenario.  In a real circumstance, this step may not be required.
-
-Run the patch
-
-```
-kubectl -n hub patch instancetype cpu-1 --type merge -p '{"spec":{"limits.cpu": 0.5, "requests.cpu": 0.5, "limits.memory": "1G", "requests.memory": "1G", "tolerations":[{"effect":"NoSchedule", "key": "node-role.kubernetes.io/master", "operator":"Exists"}]}}'
-```{{execute}}
-
-
-**Visit PrimeHub Console**
-
-PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
-
-You should see the login page of PrimeHub Console.
-
-Hooray! PrimeHub CE has been installed and is running now. The final step, let's launch a Jupyter Notebook on PrimeHub.
-
-Don't forget the password!
+Thanks for walking through this scenario and enjoy! Email **hi@infuseai.io** for any feedback, comments, or suggestions.

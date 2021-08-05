@@ -1,8 +1,3 @@
-**Check status of two nodes
-
-Check if **controlplane(master)** and **node01** are in Ready; wait until two nodes are in Ready.
-
-`watch 'kubectl get nodes'`{{execute interrupt T2}}
 
 In this experimental scenario, we use storageclass, `local-path`; in a real circumstance, you may consider other [provisioners](https://kubernetes.io/docs/concepts/storage/storage-classes/).
 
@@ -19,4 +14,3 @@ In this experimental scenario, we use storageclass, `local-path`; in a real circ
 **Verify**
 
 `kubectl get sc`{{execute}}
-

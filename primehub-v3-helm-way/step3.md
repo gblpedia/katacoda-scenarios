@@ -4,9 +4,7 @@
 
 `helm repo update`{{execute}}
 
-**Install ingress-nginx**
-
-`helm install nginx-ingress ingress-nginx/ingress-nginx --create-namespace --namespace ingress-nginx --set controller.hostNetwork=true --set rbac.create=true`{{execute}}
+`helm install nginx-ingress stable/nginx-ingress --create-namespace --namespace ingress-nginx --version=1.31.0 --set controller.hostNetwork=true --set rbac.create=true`{{execute}}
 
 **Wait and Watch**
 

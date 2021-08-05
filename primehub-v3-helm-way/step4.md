@@ -1,41 +1,53 @@
 
-**Download PrimeHub repository**
 
-`git clone https://github.com/InfuseAI/primehub`{{execute}}
+**Add InfuseAI Helm Repo**
 
-**Verify primehub-install tool**
+`helm repo add infuseai https://charts.infuseai.io`{{execute T1}}
 
-`./primehub/install/primehub-install`{{execute}}
+`helm repo update`{{execute}}
 
-**Install tools of dependency**
+**Generate values file**
 
-`./primehub/install/primehub-install required-bin`{{execute}}
+Since Katacoda supports **https** only, we add `primehub.scheme: https` & `primehub.keycloak.scheme: https` instead; In a real circumstance, http or https depends on your demand. 
 
-Add tools in $PATH 
+*Notice* that this part of primehub-values.yaml is *slightly different* than the instructions on our [CE repo](https://github.com/InfuseAI/primehub).
 
-`echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc`{{execute}}
-`source ~/.bashrc`{{execute}}
+Generate `primehub-values.yaml`.
 
-**Install PrimeHub CE**
+```
+PRIMEHUB_DOMAIN=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
-Check the stable versions
+cat <<EOF > primehub-values.yaml
+primehub:
+  scheme: https
+  domain: ${PRIMEHUB_DOMAIN}
+  keycloak:
+    scheme: https
+ingress:
+  hosts:
+  -  ${PRIMEHUB_DOMAIN}
+EOF
+```{{execute}}
 
-`./primehub/install/primehub-install version`
+**Verify**
 
-Run the installation of latest stable version
+`cat primehub-values.yaml`{{execute}}
 
-`./primehub/install/primehub-install create primehub --primehub-ce --skip-domain-check --enable-https`{{execute}}
+**Helm Install**
 
-> Due to Katacoda supports HTTPS only, we add `--enable-https`, in real World, HTTP or HTTPS depends on the circumstance.
+It will install the latest PrimeHub CE.
 
-During the installation, it will prompt 3 questions for the user input.
+```
+helm upgrade \
+primehub infuseai/primehub \
+--install \
+--create-namespace \
+--namespace hub  \
+--values primehub-values.yaml \
+--timeout 10m
+```{{execute}}
 
-+ phadmin `password`{{execute}}
-+ keycloak `password`{{execute}}
-+ Domain `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
-
-
-**Wait and Watch Progress of Installation**
+**Wait and Watch**
 
 In Terminal 2, `watch 'kubectl -n hub get pods'`{{execute interrupt T2}}
 
