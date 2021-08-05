@@ -1,3 +1,20 @@
+**Download PrimeHub repository**
+
+`git clone https://github.com/InfuseAI/primehub`{{execute T1}}
+
+**Verify primehub-install tool**
+
+`./primehub/install/primehub-install`{{execute}}
+
+**Install tools of dependency**
+
+`./primehub/install/primehub-install required-bin`{{execute}}
+
+Add tools in $PATH 
+
+`echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc`{{execute}}
+`source ~/.bashrc`{{execute}}
+
 **Helm Install**
 
 `helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx`{{execute T1}}
