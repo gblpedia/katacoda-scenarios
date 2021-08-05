@@ -1,26 +1,8 @@
-
-**Download PrimeHub repository**
-
-`git clone https://github.com/InfuseAI/primehub`{{execute}}
-
-**Verify primehub-install tool**
-
-`./primehub/install/primehub-install`{{execute}}
-
-**Install tools of dependency**
-
-`./primehub/install/primehub-install required-bin`{{execute}}
-
-Add tools in $PATH 
-
-`echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc`{{execute}}
-`source ~/.bashrc`{{execute}}
-
 **Install PrimeHub CE**
 
 Check the stable versions
 
-`./primehub/install/primehub-install version`
+`./primehub/install/primehub-install version`{{execute}}
 
 Run the installation of latest stable version
 
@@ -30,9 +12,9 @@ Run the installation of latest stable version
 
 During the installation, it will prompt 3 questions for the user input.
 
-+ phadmin `password`{{execute}}
-+ keycloak `password`{{execute}}
 + Domain `[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
++ keycloak `password`{{execute}}
++ phadmin `password`{{execute}}
 
 
 **Wait and Watch Progress of Installation**
@@ -45,26 +27,19 @@ Then go back to first Terminal and wait until you see messages:
 
 ```
 NOTES:
-PrimeHub is installed at:
+[Completed] Install PrimeHub
 
-To get the login account, please enter the following commands:
-  echo "username: phadmin"
-  echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
+  PrimeHub:   https://XXXXXXXX.environments.katacoda.com  ( phadmin / password )
+  Id Server:  https://XXXXXXXX.environments.katacoda.com/auth/admin/ ( keycloak / password )
+
+[Completed]"
 ```
-
-According the instruction, let's find out the password of account, `phadmin`.
-```
-echo "username: phadmin"
-echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
-```{{execute}}
-
-Keep/memorize the password somewhere, we will need it at the final step.
 
 **Label Nodes**
 
 In the first Terminal.
 
-`kubectl label node component=singleuser-server --all`{{execute}}
+`kubectl label node component=singleuser-server --all`{{execute T1}}
 
 
 **Patch Instance Type**

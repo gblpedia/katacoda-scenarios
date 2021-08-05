@@ -1,4 +1,4 @@
-**Check status of two nodes
+**Check status of two nodes**
 
 Check if **controlplane(master)** and **node01** are in Ready; wait until two nodes are in Ready.
 

@@ -1,7 +1,7 @@
 
 **Login**
 
-Login PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com as `phadmin`{{copy}}/`<the_password>`.
+Login PrimeHub Console: https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com as `phadmin`{{copy}}/`password`{{copy}}.
 
 The landing page is called **User Portal**.
 
