@@ -13,6 +13,7 @@
 Add tools in $PATH 
 
 `echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc`{{execute}}
+
 `source ~/.bashrc`{{execute}}
 
 **Helm Install**
